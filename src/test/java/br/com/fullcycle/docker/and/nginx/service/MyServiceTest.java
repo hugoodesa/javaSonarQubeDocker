@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-public class MyServiceTest {
+class MyServiceTest {
 
     @Autowired
     private MyService myService;
@@ -23,5 +23,18 @@ public class MyServiceTest {
 
         // Then
         assertEquals(30, result, "The sum method should correctly add two integers.");
+    }
+
+    @Test
+    void testSub() {
+        // Given
+        Integer a = 20;
+        Integer b = 10;
+
+        // When
+        Integer result = myService.sub(a, b);
+
+        // Then
+        assertEquals(10, result, "The sub method should correctly sub two integers.");
     }
 }

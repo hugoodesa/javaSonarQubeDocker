@@ -1,0 +1,11 @@
+services:
+  sonar:
+    image: sonarqube:lts-community
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+    volumes:
+      - sonarqube_extensions:/opt/sonarqube/extensions
+
+volumes:
+  sonarqube_extensions:
